@@ -46,6 +46,4 @@ jobs:
             --set loki.persistence.size=5Gi \
             --set gateway.ingress.enabled=true \
             --set gateway.ingress.ingressClassName=traefik \
-            --set gateway.ingress.hosts.host=dev-loki.rnawealth.com \
-            --set gateway.ingress.hosts.host.path=/ \
-            --set gateway.ingress.hosts.host.pathType=ImplementationSpecific
+            --set gateway.ingress.hosts.host=dev-loki.rnawealth.com
