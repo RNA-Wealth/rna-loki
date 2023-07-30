@@ -10,11 +10,15 @@ prometheus:
     persistentVolume:
       enabled: false
 
-loki: 
+loki:
+  auth_enabled: false
   persistence:
     enabled: true
     storageClassName: nfs-client
     size: 5Gi
+
+minio:
+  enabled: true
 
 gateway:
   ingress:
