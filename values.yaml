@@ -23,5 +23,5 @@ gateway:
     hosts:
     - host: dev-loki.rnawealth.com
       paths:
-        path: /
-        pathType: ImplementationSpecific
+        - path: /
+          pathType: ImplementationSpecific
