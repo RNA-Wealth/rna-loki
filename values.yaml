@@ -22,5 +22,6 @@ gateway:
     ingressClassName: traefik
     hosts:
     - host: dev-loki.rnawealth.com
-      path: /
-      pathType: ImplementationSpecific
+      paths:
+        path: /
+        pathType: ImplementationSpecific
