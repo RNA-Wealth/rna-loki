@@ -36,16 +36,4 @@ jobs:
           args: |
             helm repo add grafana https://grafana.github.io/helm-charts
             helm repo update
-            helm install -n loki loki grafana/loki \
-            --set grafana.enabled=true \
-            --set prometheus.enabled=true \
-            --set prometheus.alertmanager.persistentVolume.enabled=false \
-            --set prometheus.server.persistentVolume.enabled=false \
-            --set loki.persistence.enabled=true \
-            --set loki.persistence.storageClassName=nfs-client \
-            --set loki.persistence.size=5Gi \
-            --set gateway.ingress.enabled=true \
-            --set gateway.ingress.ingressClassName=traefik \
-            --set gateway.ingress.hosts.host=dev-loki.rnawealth.com \
-            --set gateway.ingress.hosts.host.path=/ \
-            --set gateway.ingress.hosts.host.pathType=ImplementationSpecific
+            helm upgrade --install -n loki loki grafana/loki -f values.yaml
